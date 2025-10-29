@@ -1,105 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sahayak Wealth Management</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Finance - Wealth Management Solutions</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    @layer base {
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      /* Gradient Button Styles */
       @property --pos-x {
         syntax: '<percentage>';
         initial-value: 11.14%;
         inherits: false;
       }
+
       @property --pos-y {
         syntax: '<percentage>';
         initial-value: 140%;
         inherits: false;
       }
+
       @property --spread-x {
         syntax: '<percentage>';
         initial-value: 150%;
         inherits: false;
       }
+
       @property --spread-y {
         syntax: '<percentage>';
         initial-value: 180.06%;
         inherits: false;
       }
+
       @property --color-1 {
         syntax: '<color>';
         initial-value: #000;
         inherits: false;
       }
+
       @property --color-2 {
         syntax: '<color>';
         initial-value: #08012c;
         inherits: false;
       }
+
       @property --color-3 {
         syntax: '<color>';
         initial-value: #4e1e40;
         inherits: false;
       }
+
       @property --color-4 {
         syntax: '<color>';
         initial-value: #70464e;
         inherits: false;
       }
+
       @property --color-5 {
         syntax: '<color>';
         initial-value: #88394c;
         inherits: false;
       }
+
       @property --border-angle {
         syntax: '<angle>';
         initial-value: 20deg;
         inherits: true;
       }
+
       @property --border-color-1 {
         syntax: '<color>';
         initial-value: hsla(340, 75%, 60%, 0.2);
         inherits: true;
       }
+
       @property --border-color-2 {
         syntax: '<color>';
         initial-value: hsla(340, 75%, 40%, 0.75);
         inherits: true;
       }
+
       @property --stop-1 {
         syntax: '<percentage>';
         initial-value: 37.35%;
         inherits: false;
       }
+
       @property --stop-2 {
         syntax: '<percentage>';
         initial-value: 61.36%;
         inherits: false;
       }
+
       @property --stop-3 {
         syntax: '<percentage>';
         initial-value: 78.42%;
         inherits: false;
       }
+
       @property --stop-4 {
         syntax: '<percentage>';
         initial-value: 89.52%;
         inherits: false;
       }
+
       @property --stop-5 {
         syntax: '<percentage>';
         initial-value: 100%;
         inherits: false;
       }
-    }
-    @layer components {
+
       .gradient-button {
-        @apply relative appearance-none cursor-pointer;
+        position: relative;
+        appearance: none;
+        cursor: pointer;
         background: radial-gradient(
           var(--spread-x) var(--spread-y) at var(--pos-x) var(--pos-y),
           var(--color-1) var(--stop-1),
@@ -108,25 +129,9 @@
           var(--color-4) var(--stop-4),
           var(--color-5) var(--stop-5)
         );
-        transition:
-          --pos-x 0.5s,
-          --pos-y 0.5s,
-          --spread-x 0.5s,
-          --spread-y 0.5s,
-          --color-1 0.5s,
-          --color-2 0.5s,
-          --color-3 0.5s,
-          --color-4 0.5s,
-          --color-5 0.5s,
-          --border-angle 0.5s,
-          --border-color-1 0.5s,
-          --border-color-2 0.5s,
-          --stop-1 0.5s,
-          --stop-2 0.5s,
-          --stop-3 0.5s,
-          --stop-4 0.5s,
-          --stop-5 0.5s;
+        transition: all 0.5s ease;
       }
+
       .gradient-button::before {
         content: '';
         position: absolute;
@@ -138,10 +143,13 @@
           var(--border-color-1),
           var(--border-color-2)
         );
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
         mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         mask-composite: exclude;
         pointer-events: none;
       }
+
       .gradient-button:hover {
         --pos-x: 0%;
         --pos-y: 91.51%;
@@ -160,7 +168,9 @@
         --stop-3: 21.44%;
         --stop-4: 71.34%;
         --stop-5: 85.76%;
+        transform: translateY(-2px);
       }
+
       .gradient-button-variant {
         --color-1: #000022;
         --color-2: #1f3f6d;
@@ -170,6 +180,7 @@
         --border-color-1: hsla(320, 75%, 90%, 0.6);
         --border-color-2: hsla(320, 50%, 90%, 0.15);
       }
+
       .gradient-button-variant:hover {
         --pos-x: 0%;
         --pos-y: 95.51%;
@@ -188,61 +199,79 @@
         --border-angle: 210deg;
         --border-color-1: hsla(320, 75%, 90%, 0.2);
         --border-color-2: hsla(320, 50%, 90%, 0.75);
+        transform: translateY(-2px);
       }
-    }
-  </style>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            'sans': ['Inter', 'sans-serif'],
-            'serif': ['Cormorant Garamond', 'serif'],
-          },
-          colors: {
-            'brand-dark': '#0a0a0a',
-            'brand-night': '#121212',
-            'brand-gold': {
-              'DEFAULT': '#c09a5b',
-              'light': '#d4af7a',
-              'dark': '#a37f44'
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Cormorant Garamond', 'serif'],
             },
-            'brand-gray': {
-              '100': '#1f1f1f',
-              '200': '#2a2a2a',
-              '300': '#9ca3af'
-            }
-          },
-          animation: {
-            'fade-in': 'fadeIn 0.5s ease-in-out',
-          },
-          keyframes: {
-            fadeIn: {
-              '0%': { opacity: '0', transform: 'translateY(10px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
+            colors: {
+              'brand': {
+                dark: '#050505',
+                darker: '#030303',
+                darkest: '#010101',
+                night: '#0a0a0a',
+                'night-100': '#111111',
+                'night-200': '#1a1a1a',
+                'night-300': '#252525',
+              },
+              'brand-gold': {
+                DEFAULT: '#d4af37',  // Rich gold
+                light: '#f0d68c',
+                dark: '#b78c2a',
+                '50': '#fff9e6',
+                '100': '#ffefb8',
+                '200': '#ffe38a',
+                '300': '#ffd75c',
+                '400': '#ffcc33',
+                '500': '#d4af37',
+                '600': '#b38f2a',
+                '700': '#8f6f1d',
+                '800': '#6c5010',
+                '900': '#4a3506',
+              },
+              'brand-silver': {
+                DEFAULT: '#c0c0c0',
+                light: '#e5e5e5',
+                dark: '#a0a0a0',
+              },
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-in-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
             },
           },
         },
-      },
-    };
-  </script>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.4",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.548.0",
-    "@radix-ui/react-slot": "https://aistudiocdn.com/@radix-ui/react-slot@^1.1.0",
-    "class-variance-authority": "https://aistudiocdn.com/class-variance-authority@^0.7.0",
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24"
-  }
-}
-</script>
-</head>
-<body class="bg-brand-dark text-gray-300 font-sans">
-  <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+      };
+    </script>
+    <script type="importmap">
+      {
+        "imports": {
+          "react/": "https://aistudiocdn.com/react@^19.2.0/",
+          "react": "https://aistudiocdn.com/react@^19.2.0",
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+          "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.4",
+          "lucide-react": "https://aistudiocdn.com/lucide-react@^0.548.0",
+          "@radix-ui/react-slot": "https://aistudiocdn.com/@radix-ui/react-slot@^1.1.0",
+          "class-variance-authority": "https://aistudiocdn.com/class-variance-authority@^0.7.0",
+          "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24"
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-brand-dark text-gray-300 font-sans dark">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

@@ -1,5 +1,4 @@
 import React from 'react';
-// FIX: Use namespace import for react-router-dom to fix module resolution issues.
 import * as Router from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
@@ -19,7 +18,7 @@ function App() {
   return (
     <Router.HashRouter>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-brand-dark text-gray-300">
         <Header />
         <main className="flex-grow">
           <Router.Routes>

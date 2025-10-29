@@ -27,7 +27,7 @@ function DisplayCard({
   to,
 }: DisplayCardProps) {
   const cardClassName = cn(
-    "group relative flex h-48 w-[32rem] -skew-y-[8deg] select-none flex-col rounded-xl border-2 border-brand-gray-200 bg-brand-gray-200/70 backdrop-blur-sm px-6 py-4 transition-all duration-500 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[28rem] after:bg-gradient-to-l after:from-brand-dark after:to-transparent after:content-[''] hover:h-80 hover:border-brand-gold/50 hover:bg-brand-gray-100",
+    "group relative flex h-48 w-[32rem] -skew-y-[8deg] select-none flex-col rounded-xl border-2 border-brand-gray-200/50 bg-brand-gray-800/80 backdrop-blur-sm px-6 py-4 transition-all duration-500 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[28rem] after:bg-gradient-to-l after:from-brand-dark/80 after:to-transparent after:content-[''] hover:h-80 hover:border-brand-gold/50 hover:bg-brand-gray-900/90 hover:z-10 hover:shadow-xl hover:shadow-black/20",
     className
   );
 
@@ -41,16 +41,16 @@ function DisplayCard({
       </div>
       
       <div className="flex-grow py-2 overflow-hidden">
-        <p className="text-xl text-gray-200">{tagline}</p>
+        <p className="text-xl font-medium text-white group-hover:text-brand-gold-light transition-colors duration-300">{tagline}</p>
         {details && (
-            <p className="mt-3 text-base leading-relaxed text-gray-300 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <p className="mt-3 text-base leading-relaxed text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {details}
             </p>
         )}
       </div>
 
       <div className="flex items-center gap-2">
-        <p className="text-sm text-brand-gray-300">{date}</p>
+        <p className="text-sm text-brand-gold-light/80">{date}</p>
       </div>
     </>
   );
@@ -90,7 +90,7 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
   const displayCards = cards || defaultCards;
 
   return (
-    <div className="grid [grid-template-areas:'stack'] place-items-center opacity-100 duration-700">
+    <div className="grid [grid-template-areas:'stack'] place-items-center opacity-100 duration-700 relative">
       {displayCards.map((cardProps, index) => (
         <DisplayCard key={index} {...cardProps} />
       ))}

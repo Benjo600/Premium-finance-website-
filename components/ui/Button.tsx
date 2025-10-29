@@ -24,9 +24,9 @@ const Button: React.FC<ButtonProps> = ({
   const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-dark transform transition-transform duration-150';
 
   const variantStyles = {
-    primary: 'bg-brand-gold text-brand-dark border-b-4 border-brand-gold-dark shadow-lg hover:bg-brand-gold-light hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-2',
-    secondary: 'bg-brand-gray-200 text-white border-b-4 border-brand-gray-100 hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-2 active:brightness-100',
-    outline: 'bg-transparent border-2 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark hover:-translate-y-0.5 active:translate-y-0',
+    primary: 'bg-brand-gold text-brand-darkest font-semibold border-b-4 border-brand-gold-700 shadow-lg hover:bg-brand-gold-400 hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-2 transition-all duration-200',
+    secondary: 'bg-brand-night-300 text-white border-b-4 border-brand-night-200 hover:bg-brand-night-200 hover:-translate-y-0.5 active:translate-y-0.5 active:border-b-2 transition-all duration-200',
+    outline: 'bg-transparent border-2 border-brand-gold-400 text-brand-gold-400 hover:bg-brand-gold-400/10 hover:text-brand-gold-300 hover:border-brand-gold-300 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200',
   };
 
   const sizeStyles = {
